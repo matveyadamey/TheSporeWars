@@ -70,13 +70,13 @@ public class Raycaster : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
                 GameObject click = hit.collider.gameObject;
-
+            
                 if ((CurrentPlayer.PurchasedObject != null & CurrentPlayer.TypePurchasedObject != null) || CurrentPlayer.MovementChip != null)
                 {
                     if (click.transform.position != clickPosition)
                     {
                         if (click.tag == "Cell")
-                        {
+                        {  
                             clickPosition = click.transform.position;
                             OnClick();
                         }
