@@ -3,7 +3,9 @@ using UnityEngine;
 public class Raycaster : MonoBehaviour
 {
     Vector3 clickPosition;
+    GameObject _clickedObject;
     private static bool _isGameContinue = true;
+    private static int _costDeleting = 0; 
     void moveChip()
     {
         Point lastClick = new Point((int)clickPosition.x, (int)clickPosition.z);
@@ -25,19 +27,32 @@ public class Raycaster : MonoBehaviour
 
         GameObject spawnedObject = ObjectSpawner.SpawnObject(CurrentPlayer.TypePurchasedObject, CurrentPlayer.PurchasedObject, place, Quaternion.identity);
 
+        if (CurrentPlayer.TypePurchasedObject.Type != "turret")
+        {
+            CurrentPlayer.NextPlayer();
+        }
         if (CurrentPlayer.MovementChip != null)
         {
             Highlighter.HiglightPossiblePlacesToMove(CurrentPlayer.MovementChip.chipNumber, false);
             Highlighter.HighlightOff(CurrentPlayer.MovementChip.gameObject);
         }
-
-        if (CurrentPlayer.TypePurchasedObject.Type != "turret")
-        {
-            CurrentPlayer.NextPlayer();
-        }
         CurrentPlayer.OperatingMode = "expectation";
         CurrentPlayer.TypePurchasedObject = null;
         CurrentPlayer.PurchasedObject = null;
+    }
+
+    public void DeleteObjectOnClick()
+    {
+        Point click = new((int)clickPosition.x, (int) clickPosition.z);
+        GameObject obj = _clickedObject;
+        if (MapObject.GetObject(click) == null || PlayersContainer.Players[CurrentPlayer.CurrentPlayerNumber].CountCoins < _costDeleting)
+            return;
+        else
+        {
+            PlayersContainer.Players[CurrentPlayer.CurrentPlayerNumber].CountCoins -= _costDeleting;
+            ObjectDestroyer1.DeleteObject(obj, click);
+        }
+
     }
     void OnClick()
     {
@@ -50,8 +65,15 @@ public class Raycaster : MonoBehaviour
             case "buy_object":
                 buyObject();
                 break;
+            case "":
+                if (_clickedObject != null)
+                {
+                    DeleteObjectOnClick();
+                }
+                break;
 
         }
+        _clickedObject = null;
     }
 
     public static void OffGame() 
@@ -70,14 +92,15 @@ public class Raycaster : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
                 GameObject click = hit.collider.gameObject;
-            
+
                 if ((CurrentPlayer.PurchasedObject != null & CurrentPlayer.TypePurchasedObject != null) || CurrentPlayer.MovementChip != null)
                 {
                     if (click.transform.position != clickPosition)
                     {
                         if (click.tag == "Cell")
-                        {  
+                        {
                             clickPosition = click.transform.position;
+                            _clickedObject = click;
                             OnClick();
                         }
                     }
