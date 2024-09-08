@@ -17,14 +17,7 @@ public class Highlighter : MonoBehaviour
 
         foreach (Point possiblePlaceMoveTo in possiblePlacesToMove)
         {
-            if (isActive)
-            {
-                Field.SetCellMaterial(possiblePlaceMoveTo, StartGame.CanMoveMaterial);
-            }
-            else
-            {
-                Field.SetCellMaterial(possiblePlaceMoveTo, StartGame.Materials[Field.GetCellLayer(possiblePlaceMoveTo)]);
-            }
+            Field.SetCellMaterial(possiblePlaceMoveTo, isActive);
         }
     }
 }

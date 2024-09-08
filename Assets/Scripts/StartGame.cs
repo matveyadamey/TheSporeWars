@@ -24,7 +24,6 @@ public class StartGame : MonoBehaviour
     [SerializeField] private Text _money2;
     [SerializeField] private GameObject _buildingPanel1;
     [SerializeField] private GameObject _buildingPanel2;
-    [SerializeField] private Material _canMoveMaterial;
     [SerializeField] private Material[] _materials;
     [SerializeField] private GameObject _cellPrefab;
     [SerializeField] private Transform _cellParent;
@@ -33,7 +32,6 @@ public class StartGame : MonoBehaviour
     [SerializeField] private GameObject _winMenu;
     void Awake()
     {
-        CanMoveMaterial = _canMoveMaterial;
         Materials = _materials;
         CellPrefab = _cellPrefab;
         CellParent = _cellParent;

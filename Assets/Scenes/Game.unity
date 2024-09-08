@@ -3591,7 +3591,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.849998, y: 280.97003}
+  m_AnchoredPosition: {x: -1.8499985, y: 280.97003}
   m_SizeDelta: {x: 140.4, y: 48.065}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &768533353
@@ -3911,7 +3911,6 @@ MonoBehaviour:
   _money2: {fileID: 1707091059}
   _buildingPanel1: {fileID: 1991934998}
   _buildingPanel2: {fileID: 1355560637}
-  _canMoveMaterial: {fileID: 2100000, guid: b64ba664ed4a9fb45a8bb110fb1498e2, type: 2}
   _materials:
   - {fileID: 2100000, guid: 04da52fcff48d2748a7e0422c07871a1, type: 2}
   - {fileID: 2100000, guid: 281d0e41beee1434ab0e2ab609b954df, type: 2}
@@ -3957,15 +3956,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887007501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1365e368aabd934892d46492c510558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _audio: {fileID: 357479700}
-  post: {fileID: 45566460}
-  postProcessing: {fileID: 0}
-  AntiAliasingDD: {fileID: 0}
   slider_Music: {fileID: 0}
   slider_Sounds: {fileID: 0}
 --- !u!1 &922060265
@@ -4577,7 +4573,7 @@ PrefabInstance:
     - target: {fileID: 7366984150532482583, guid: d7f45b95746641c48967da6733c84bef, type: 3}
       propertyPath: raycaster
       value: 
-      objectReference: {fileID: 2034438544}
+      objectReference: {fileID: 0}
     - target: {fileID: 7366984150532482583, guid: d7f45b95746641c48967da6733c84bef, type: 3}
       propertyPath: chipNumber
       value: 0
@@ -6706,7 +6702,7 @@ PrefabInstance:
     - target: {fileID: 6870117831136326912, guid: dbbd1c75362a1b142952ead6d500fa2d, type: 3}
       propertyPath: raycaster
       value: 
-      objectReference: {fileID: 2034438544}
+      objectReference: {fileID: 0}
     - target: {fileID: 6870117831136326912, guid: dbbd1c75362a1b142952ead6d500fa2d, type: 3}
       propertyPath: chipNumber
       value: 1
@@ -9108,7 +9104,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2034438542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd63f4a11bb985c44a60d5f03465c8d3, type: 3}
+  m_Script: {fileID: 11500000, guid: d07f3ad40b314914d815bda1de3591f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2076689070
@@ -9436,7 +9432,7 @@ PrefabInstance:
     - target: {fileID: 6870117831136326912, guid: dbbd1c75362a1b142952ead6d500fa2d, type: 3}
       propertyPath: raycaster
       value: 
-      objectReference: {fileID: 2034438544}
+      objectReference: {fileID: 0}
     - target: {fileID: 7053467118782519012, guid: dbbd1c75362a1b142952ead6d500fa2d, type: 3}
       propertyPath: m_Name
       value: chip1
@@ -9541,7 +9537,7 @@ PrefabInstance:
     - target: {fileID: 7366984150532482583, guid: d7f45b95746641c48967da6733c84bef, type: 3}
       propertyPath: raycaster
       value: 
-      objectReference: {fileID: 2034438544}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
