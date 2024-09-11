@@ -14,11 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: feea6ec83a1a04b4cbfb7f99c9c9b63f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.9868785
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: feea6ec83a1a04b4cbfb7f99c9c9b63f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.0022422
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: feea6ec83a1a04b4cbfb7f99c9c9b63f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -102,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: feea6ec83a1a04b4cbfb7f99c9c9b63f, type: 3}
       propertyPath: m_Name
-      value: coin
+      value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: feea6ec83a1a04b4cbfb7f99c9c9b63f, type: 3}
       propertyPath: m_TagString

@@ -12,9 +12,10 @@ public static class Field
         return Mathf.Min(Mathf.Min(point.x, Size - point.x - 1), Mathf.Min(point.y, Size - point.y - 1));
     }
 
-    public static void SetCellMaterial(Point point, Material material)
+    public static void SetCellMaterial(Point point, bool isCellActive)
     {
-        _coordNet[point.x][point.y].GetComponent<Renderer>().material = material;
+        _coordNet[point.x][point.y].GetComponent<Renderer>().enabled = isCellActive;
+        
     }
 
     public static void DeleteCoin(Point p)
@@ -43,7 +44,7 @@ public static class Field
 
                 GameObject cube = UnityEngine.Object.Instantiate(StartGame.CellPrefab, new Vector3(i, 0, j), Quaternion.identity, StartGame.CellParent);
                 _coordNet[i][j] = cube;
-                SetCellMaterial(new Point(i, j), StartGame.Materials[GetCellLayer(new Point(i, j))]);
+                //SetCellMaterial(new Point(i, j), StartGame.Materials[GetCellLayer(new Point(i, j))]);
             }
         }
     }

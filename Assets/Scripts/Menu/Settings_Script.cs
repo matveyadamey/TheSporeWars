@@ -10,12 +10,12 @@ public class Settings_Script : MonoBehaviour
     private float volume_Sounds;
     [SerializeField] AudioSource _audio;
 
-    private int isPostProcessing = 1;
-    [SerializeField] private GameObject post;
-    [SerializeField] private Toggle postProcessing;
+    //private int isPostProcessing = 1;
+    //[SerializeField] private GameObject post;
+    //[SerializeField] private Toggle postProcessing;
 
-    private int antiAliasingVariant;
-    [SerializeField] private TMP_Dropdown AntiAliasingDD;
+    //private int antiAliasingVariant;
+    //[SerializeField] private TMP_Dropdown AntiAliasingDD;
 
     [SerializeField] Slider slider_Music;
     [SerializeField] Slider slider_Sounds;
@@ -46,7 +46,7 @@ public class Settings_Script : MonoBehaviour
         slider_Music.value = volume_Music;
         slider_Sounds.value = volume_Sounds;
     }
-
+    /*
     public void PostProcessing()
     {
         if (isPostProcessing == 1)
@@ -87,19 +87,21 @@ public class Settings_Script : MonoBehaviour
         }
         Save();
     }
+    */
 
     void Save()
     {
         PlayerPrefs.SetFloat("VolumeMusic", volume_Music);
         PlayerPrefs.SetFloat("VolumeSounds", volume_Sounds);
-        PlayerPrefs.SetInt("IsPostProcessing", isPostProcessing);
-        PlayerPrefs.SetInt("AntiAliasing", antiAliasingVariant);
+        //PlayerPrefs.SetInt("IsPostProcessing", isPostProcessing);
+        //PlayerPrefs.SetInt("AntiAliasing", antiAliasingVariant);
     }
 
     void Load()
     {
         volume_Music = PlayerPrefs.GetFloat("VolumeMusic", volume_Music);
         volume_Sounds = PlayerPrefs.GetFloat("VolumeSounds", volume_Sounds);
+        /*
         isPostProcessing = PlayerPrefs.GetInt("IsPostProcessing", isPostProcessing);
         if (isPostProcessing == 0)
         {
@@ -111,5 +113,6 @@ public class Settings_Script : MonoBehaviour
         if (antiAliasingVariant == 1) { QualitySettings.antiAliasing = 2; }
         else if (antiAliasingVariant == 2) { QualitySettings.antiAliasing = 4; }
         else if (AntiAliasingDD.value == 3) { QualitySettings.antiAliasing = 8; }
+        */
     }
 }
