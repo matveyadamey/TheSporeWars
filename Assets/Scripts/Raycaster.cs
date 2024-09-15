@@ -97,7 +97,7 @@ public class Raycaster : MonoBehaviour
                 {
                     if (click.transform.position != clickPosition)
                     {
-                        if (click.tag == "Cell")
+                        if (click.tag == "Cell" || click.tag == "coins")
                         {
                             clickPosition = click.transform.position;
                             _clickedObject = click;
