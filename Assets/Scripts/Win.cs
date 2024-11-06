@@ -7,8 +7,6 @@ public class Win : MonoBehaviour
 {
     [SerializeField] private static GameObject _winScreen;
 
-    
-
     public static void SetWinScreen(GameObject winScreen)
     {
         _winScreen = winScreen;

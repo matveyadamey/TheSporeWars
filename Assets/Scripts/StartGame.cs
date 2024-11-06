@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class StartGame : MonoBehaviour
 {
-    public const int Size = 10;
+    public const int Size = 4;
     public const int RadiusAttack = 1;
     public const int PlayersCount = 2;
     public const int ChipsCount = 2;

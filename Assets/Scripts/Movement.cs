@@ -26,7 +26,6 @@ public class Movement : MonoBehaviour {
         if (player.CanMoveChip(chipNumber,target))
         {
             StartCoroutine(this.realMove(_target));
-
             Highlighter.HighlightOff(gameObject);
             Highlighter.HiglightPossiblePlacesToMove(chipNumber, false);
 

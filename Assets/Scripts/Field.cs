@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public static class Field
 {
@@ -17,6 +18,15 @@ public static class Field
         _coordNet[point.x][point.y].GetComponent<Renderer>().enabled = isCellActive;
         
     }
+
+    public static bool IsCentralCells(double i, double j)
+    {
+        MonoBehaviour.print(i.ToString()+j.ToString()+ Math.Ceiling((double)Size / 2).ToString()+ (Math.Ceiling((double)Size / 2) - 1).ToString());
+        return (i == Math.Ceiling((double)Size/ 2)-1 | i == Math.Ceiling((double)Size / 2)) &
+            (j == Math.Ceiling((double)Size / 2) -1 | j == Math.Ceiling((double)Size / 2));
+    }
+
+
 
     public static void DeleteCoin(Point p)
     {
@@ -44,6 +54,10 @@ public static class Field
 
                 GameObject cube = UnityEngine.Object.Instantiate(StartGame.CellPrefab, new Vector3(i, 0, j), Quaternion.identity, StartGame.CellParent);
                 _coordNet[i][j] = cube;
+                if (IsCentralCells(i,j))
+                {
+                    SetCellMaterial(new Point(i, j), true);
+                }
                 //SetCellMaterial(new Point(i, j), StartGame.Materials[GetCellLayer(new Point(i, j))]);
             }
         }
