@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Win : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Win : MonoBehaviour
     {
         print("Win");
         _winScreen.SetActive(true);
+        _winScreen.transform.Find("PlayerNumber").GetComponent<TMP_Text>().text = "победил игрок " + NumberWinningPlayer().ToString();
         Raycaster.OffGame();
     }
 

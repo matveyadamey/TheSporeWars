@@ -8,7 +8,7 @@ public class Settings_Script : MonoBehaviour
 {
     private float volume_Music;
     private float volume_Sounds;
-    [SerializeField] AudioSource _audio;
+    private AudioSource _audio;
 
     private int isPostProcessing = 1;
     [SerializeField] private GameObject post;
@@ -22,6 +22,7 @@ public class Settings_Script : MonoBehaviour
 
     void Start()
     {
+        _audio = GameObject.Find("Audio").GetComponent<AudioSource>();
         Load();
         ValueAudio();
     }

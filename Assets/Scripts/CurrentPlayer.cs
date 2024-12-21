@@ -3,7 +3,7 @@ using UnityEngine;
 public static class CurrentPlayer
 {
     private static int playersCount = 2;
-    public static int CurrentPlayerNumber { get; private set; } = 0;
+    public static int CurrentPlayerNumber { get; set; }
 
     //==========================================================================
     public static string OperatingMode { get; set; } = "expectation";
@@ -13,7 +13,6 @@ public static class CurrentPlayer
     public static GameObject PurchasedObject { get; set; } = null;
     public static Object TypePurchasedObject { get; set; } = null;
     //==========================================================================
-
 
     public static void NextPlayer()
     {

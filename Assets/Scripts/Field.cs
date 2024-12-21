@@ -21,7 +21,6 @@ public static class Field
 
     public static bool IsCentralCells(double i, double j)
     {
-        MonoBehaviour.print(i.ToString()+j.ToString()+ Math.Ceiling((double)Size / 2).ToString()+ (Math.Ceiling((double)Size / 2) - 1).ToString());
         return (i == Math.Ceiling((double)Size/ 2)-1 | i == Math.Ceiling((double)Size / 2)) &
             (j == Math.Ceiling((double)Size / 2) -1 | j == Math.Ceiling((double)Size / 2));
     }

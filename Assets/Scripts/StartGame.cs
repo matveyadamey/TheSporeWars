@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class StartGame : MonoBehaviour
 {
-    public const int Size = 4;
+    public const int Size = 10;
     public const int RadiusAttack = 1;
     public const int PlayersCount = 2;
     public const int ChipsCount = 2;
@@ -52,6 +52,8 @@ public class StartGame : MonoBehaviour
         PlayersContainer.Players[0].SetCoordChip(1, new Point(Size - 1, Size - 1));
         PlayersContainer.Players[1].SetCoordChip(0, new Point(0, Size - 1));
         PlayersContainer.Players[1].SetCoordChip(1, new Point(Size - 1, 0));
+
+        CurrentPlayer.CurrentPlayerNumber = 0;
     }
 
 }

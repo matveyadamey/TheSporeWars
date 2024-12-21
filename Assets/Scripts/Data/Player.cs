@@ -53,7 +53,7 @@ public class Player
 
     public bool IsChipsInCenter()
     {
-        return Point.IsPointInCenter(_coordChip[0]) && Point.IsPointInCenter(_coordChip[1]);
+        return Point.IsPointInCenter(_coordChip[0]) | Point.IsPointInCenter(_coordChip[1]);
     }
     public void MoveChip(int chipIndex, Point placeMoveTo)
     {

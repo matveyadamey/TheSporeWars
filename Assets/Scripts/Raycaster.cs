@@ -4,8 +4,13 @@ public class Raycaster : MonoBehaviour
 {
     Vector3 clickPosition;
     GameObject _clickedObject;
-    private static bool _isGameContinue = true;
-    private static int _costDeleting = 0; 
+    private static bool _isGameContinue;
+    private static int _costDeleting = 0;
+
+    private void Awake()
+    {
+        _isGameContinue = true;
+    }
     void moveChip()
     {
         Point lastClick = new Point((int)clickPosition.x, (int)clickPosition.z);

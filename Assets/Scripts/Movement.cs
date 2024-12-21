@@ -31,6 +31,9 @@ public class Movement : MonoBehaviour {
 
             player.MoveChip(chipNumber, target);
 
+            if(player.IsChipsInCenter()){
+                Win.ShowWinScreen();
+            }
             CurrentPlayer.OperatingMode = "expectation";
             CurrentPlayer.MovementChip = null;
             CurrentPlayer.NextPlayer();
