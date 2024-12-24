@@ -11,10 +11,13 @@ public class UIManager : MonoBehaviour
     static Player player1;
     static Player player2;
 
+    private Movement movement;
+
     private void Start()
     {
         player1 = PlayersContainer.Players[0];
         player2 = PlayersContainer.Players[1];
+        movement = FindFirstObjectByType<Movement>();
 
     }
     public static void UpdateUI()
@@ -33,6 +36,7 @@ public class UIManager : MonoBehaviour
 
         if (player.CountCoins >= type.Cost)
         {
+            Highlighter.HiglightPossiblePlacesToMove(movement.chipNumber, false);
             CurrentPlayer.OperatingMode = "buy_object";
             CurrentPlayer.TypePurchasedObject = type;
             CurrentPlayer.PurchasedObject = prefab;

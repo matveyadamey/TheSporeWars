@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class MusicSaver : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (SavingData.isAudioExistStatic == 0)
+        {
+            SavingData.isAudioExistStatic = 1;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-
 }
