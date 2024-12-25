@@ -9,4 +9,9 @@ public class Manage : MonoBehaviour
     {
         SceneManager.LoadScene(sceneid);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
