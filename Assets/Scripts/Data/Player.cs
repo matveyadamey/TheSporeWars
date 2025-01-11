@@ -76,6 +76,10 @@ public class Player
     public void BuyObject(Object type, Point p)
     {
         CountCoins -= type.Cost;
+        SetObjectOnMap(type, p);
+    }
+    public void SetObjectOnMap(Object type, Point p)
+    {
         MapObject._map[p.x, p.y] = type;
     }
 }

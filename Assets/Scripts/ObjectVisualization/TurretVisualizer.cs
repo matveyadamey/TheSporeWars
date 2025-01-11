@@ -35,7 +35,7 @@ public class TurretVisualizer : MonoBehaviour
                 turret.SetDirection(direction);
                 /*print(direction.x);
                 print(direction.y);*/
-                PlayersContainer.Players[CurrentPlayer.CurrentPlayerNumber].BuyObject(turret, coordinate);
+                PlayersContainer.Players[CurrentPlayer.CurrentPlayerNumber].SetObjectOnMap(turret, coordinate);
                 Point[] directions = {new(0, 1), new(1, 0), new(0, -1), new(-1, 0) };
                 for (int i = 0; i < directions.Length; i++) 
                 {

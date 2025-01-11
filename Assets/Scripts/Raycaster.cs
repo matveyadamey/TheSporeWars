@@ -1,3 +1,4 @@
+using System.Drawing;
 using UnityEngine;
 
 public class Raycaster : MonoBehaviour
@@ -27,23 +28,25 @@ public class Raycaster : MonoBehaviour
         {
             return;
         }
-
-        Field.DeleteCoin(p);
-
-        GameObject spawnedObject = ObjectSpawner.SpawnObject(CurrentPlayer.TypePurchasedObject, CurrentPlayer.PurchasedObject, place, Quaternion.identity);
-
-        if (CurrentPlayer.TypePurchasedObject.Type != "turret")
+        if (!Field.IsCentralCells(p.x, p.y))
         {
-            CurrentPlayer.NextPlayer();
+            Field.DeleteCoin(p);
+
+            GameObject spawnedObject = ObjectSpawner.SpawnObject(CurrentPlayer.TypePurchasedObject, CurrentPlayer.PurchasedObject, place, Quaternion.identity);
+
+            if (CurrentPlayer.TypePurchasedObject.Type != "turret")
+            {
+                CurrentPlayer.NextPlayer();
+            }
+            if (CurrentPlayer.MovementChip != null)
+            {
+                Highlighter.HiglightPossiblePlacesToMove(CurrentPlayer.MovementChip.chipNumber, false);
+                Highlighter.HighlightOff(CurrentPlayer.MovementChip.gameObject);
+            }
+            CurrentPlayer.OperatingMode = "expectation";
+            CurrentPlayer.TypePurchasedObject = null;
+            CurrentPlayer.PurchasedObject = null;
         }
-        if (CurrentPlayer.MovementChip != null)
-        {
-            Highlighter.HiglightPossiblePlacesToMove(CurrentPlayer.MovementChip.chipNumber, false);
-            Highlighter.HighlightOff(CurrentPlayer.MovementChip.gameObject);
-        }
-        CurrentPlayer.OperatingMode = "expectation";
-        CurrentPlayer.TypePurchasedObject = null;
-        CurrentPlayer.PurchasedObject = null;
     }
 
     public void DeleteObjectOnClick()

@@ -15,12 +15,24 @@ public static class Field
 
     public static void SetCellMaterial(Point point, bool isCellActive)
     {
-        _coordNet[point.x][point.y].GetComponent<Renderer>().enabled = isCellActive;
-        
+        if (isCellActive)
+        {
+            _coordNet[point.x][point.y].GetComponent<Renderer>().enabled = isCellActive;
+        }
+        else
+        {
+            if (!Field.IsCentralCells(point.x, point.y))
+            {
+                _coordNet[point.x][point.y].GetComponent<Renderer>().enabled = isCellActive;
+            }
+        } 
     }
 
     public static bool IsCentralCells(double i, double j)
     {
+        //MonoBehaviour.print(i.ToString() + " " + j.ToString());
+
+
         return (i == Math.Ceiling((double)Size/ 2)-1 | i == Math.Ceiling((double)Size / 2)) &
             (j == Math.Ceiling((double)Size / 2) -1 | j == Math.Ceiling((double)Size / 2));
     }

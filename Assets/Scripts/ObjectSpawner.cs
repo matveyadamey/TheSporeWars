@@ -11,6 +11,7 @@ public class ObjectSpawner : MonoBehaviour
         Player player = PlayersContainer.Players[CurrentPlayer.CurrentPlayerNumber];
 
         player.BuyObject(type, new Point((int)pos.x, (int)pos.z));
+        Debug.Log("BuyObject");
 
         return spawnedObject;
     }
